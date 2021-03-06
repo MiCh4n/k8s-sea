@@ -1,1 +1,1 @@
-# Go app to show k8s
+# app to show k8s
