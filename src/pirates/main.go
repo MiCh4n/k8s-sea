@@ -14,7 +14,7 @@ func pirate(w http.ResponseWriter, r *http.Request) {
 func handleRequests() {
 	Host := os.Getenv("HOST_PIRATE")
 	Port := os.Getenv("PORT_PIRATE")
-	http.HandleFunc("/pirate", pirate)
+	http.HandleFunc("/", pirate)
 	log.Fatal(http.ListenAndServe(Host+":"+Port, nil))
 }
 

@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sea
+spec:
+  selector:
+    matchLabels:
+      app: sea
+  template:
+    metadata:
+      labels:
+        app: sea
+    spec:
+      containers:
+      - name: sea
+        image: sea
+        resources:
+          limits:
+            memory: "256Mi"
+            cpu: "350m"
+        ports:
+        - containerPort: 5000
+          name: http

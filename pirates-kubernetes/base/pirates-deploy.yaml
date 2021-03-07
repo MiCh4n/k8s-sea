@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pirates
+spec:
+  selector:
+    matchLabels:
+      app: pirates
+  template:
+    metadata:
+      labels:
+        app: pirates
+    spec:
+      containers:
+      - name: pirates
+        image: pirates
+        resources:
+          limits:
+            memory: "256Mi"
+            cpu: "350m"
+        ports:
+        - containerPort: 6000
+          name: http
