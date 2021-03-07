@@ -8,7 +8,7 @@ import (
 )
 
 func pirate(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "There are pirates on the sea! Pods are in danger!\n")
+	fmt.Fprintf(w, "There are pirates on the sea! Pods are in danger!")
 }
 
 func handleRequests() {
