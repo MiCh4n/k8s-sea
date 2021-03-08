@@ -18,7 +18,9 @@ RUN go build -o main .
 WORKDIR /dist
 
 RUN cp /build/main .
+RUN cp -r /build/static .
 
 FROM scratch
 COPY --from=builder /dist/main /
+COPY --from=builder /dist/static/ /static
 ENTRYPOINT [ "/main" ]

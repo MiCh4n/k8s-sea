@@ -14,6 +14,15 @@ spec:
       containers:
       - name: sea
         image: sea
+        env:
+          - name: HOST_PIRATE
+            value: "localhost"
+          - name: PORT_PIRATE
+            value: "6000"
+          - name: HOST_SEA
+            value: "localhost"
+          - name: PORT_SEA
+            value: "5000"
         resources:
           limits:
             memory: "256Mi"

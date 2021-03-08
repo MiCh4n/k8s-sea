@@ -4,7 +4,3 @@ namespace: default
 resources:
   - sea-deploy.yaml
   - sea-svc.yaml
-configMapGenerator:
-  - name: sea-config
-    envs:
-      - conf.env

@@ -4,7 +4,3 @@ namespace: default
 resources:
   - pirates-deploy.yaml
   - pirates-svc.yaml
-configMapGenerator:
-  - name: pirates-config
-    envs:
-      - conf.env

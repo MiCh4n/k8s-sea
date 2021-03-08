@@ -14,6 +14,11 @@ spec:
       containers:
       - name: pirates
         image: pirates
+        env:
+          - name: HOST_PIRATE
+            value: "localhost"
+          - name: PORT_PIRATE
+            value: "6000"
         resources:
           limits:
             memory: "256Mi"
