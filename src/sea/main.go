@@ -29,7 +29,7 @@ func page(data string, pirates bool) {
 func main() {
 	HostP := os.Getenv("HOST_PIRATE")
 	PortP := os.Getenv("PORT_PIRATE")
-	response, err := http.Get("http://" + HostP + ":" + PortP)
+	response, err := http.Get(HostP + ":" + PortP)
 
 	if err != nil {
 		c := true
