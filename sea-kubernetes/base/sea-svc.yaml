@@ -3,7 +3,6 @@ kind: Service
 metadata:
   name: sea
 spec:
-  type: ClusterIP
   selector:
     app: sea
   ports:
