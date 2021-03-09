@@ -10,6 +10,9 @@ spec:
     metadata:
       labels:
         app: sea
+      annotations:
+        'consul.hashicorp.com/connect-inject': 'true'
+        'consul.hashicorp.com/connect-service-upstreams': 'pirates:6000'
     spec:
       containers:
       - name: sea

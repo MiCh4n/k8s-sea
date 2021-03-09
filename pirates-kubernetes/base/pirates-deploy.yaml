@@ -10,6 +10,8 @@ spec:
     metadata:
       labels:
         app: pirates
+      annotations:
+        'consul.hashicorp.com/connect-inject': 'true'
     spec:
       containers:
       - name: pirates
