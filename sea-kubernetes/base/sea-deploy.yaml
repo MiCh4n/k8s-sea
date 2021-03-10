@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: sea
-        image: sea
+        image: mich4n/sea
         env:
           - name: UPSTREAM_ADDRESS
             value: "http://localhost:6000"

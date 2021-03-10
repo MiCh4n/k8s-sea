@@ -1,0 +1,19 @@
+    global:
+      domain: hashicorp
+      datacenter: dc1
+
+    server:
+      replicas: 1
+      bootstrapExpect: 1
+
+    client:
+      enabled: true
+
+    ui:
+      enabled: true
+
+    connectInject:
+      enabled: true
+
+    controller:
+      enabled: true
