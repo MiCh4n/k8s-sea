@@ -12,10 +12,9 @@ func pirate(w http.ResponseWriter, r *http.Request) {
 }
 
 func handleRequests() {
-	Host := os.Getenv("HOST_PIRATE")
-	Port := os.Getenv("PORT_PIRATE")
+	LISTEN_ADDR := os.Getenv("LISTEN_ADDRESS")
 	http.HandleFunc("/", pirate)
-	log.Fatal(http.ListenAndServe(Host+":"+Port, nil))
+	log.Fatal(http.ListenAndServe(LISTEN_ADDR, nil))
 }
 
 func main() {

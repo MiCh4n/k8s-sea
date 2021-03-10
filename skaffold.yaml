@@ -16,6 +16,5 @@ deploy:
   kubectl:
     manifests:
     - pirates-kubernetes/base/pirates-deploy.yaml
-    - pirates-kubernetes/base/pirates-svc.yaml
     - sea-kubernetes/base/sea-deploy.yaml
     - sea-kubernetes/base/sea-svc.yaml
