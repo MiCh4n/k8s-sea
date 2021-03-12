@@ -1,0 +1,14 @@
+apiVersion: builtin
+kind: ReplicaCountTransformer
+metadata:
+  name: sea-patch-replica
+replica:
+  name: sea
+  count: 3
+fieldSpecs:
+- path: spec/replicas
+  create: true
+  kind: Deployment
+- path: spec/replicas
+  create: true
+  kind: ReplicationController
