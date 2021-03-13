@@ -7,6 +7,6 @@ spec:
     app: sea
   ports:
   - name: http
-    protocol: TCP
     port: 5000
     targetPort: 5000
+  type: LoadBalancer
