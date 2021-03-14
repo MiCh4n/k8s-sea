@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sea
+spec:
+  selector:
+    matchLabels:
+      app: sea
+  template:
+    metadata:
+      labels:
+        app: sea
+      annotations:
+        'consul.hashicorp.com/connect-inject': 'true'
+        'consul.hashicorp.com/connect-service-upstreams': 'pirates:6000'
+    spec:
+      containers:
+      - name: sea
+        image: mich4n/sea
+        env:
+          - name: UPSTREAM_ADDRESS
+            value: "http://localhost:6000"
+          - name: LISTEN_ADDRESS
+            value: "localhost:5000"
+        resources:
+          limits:
+            memory: "256Mi"
+            cpu: "350m"
+        ports:
+        - containerPort: 5000
+          name: http
