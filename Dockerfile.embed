@@ -1,0 +1,7 @@
+FROM debian:buster-slim
+WORKDIR /app
+COPY sea  .
+COPY ./static static
+EXPOSE 5000
+USER nobody
+ENTRYPOINT [ "/app/sea" ]
