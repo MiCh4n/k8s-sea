@@ -16,7 +16,7 @@ pipeline {
                     stash name: "app", includes: "sea"
                 } 
             }
-
+        }
         stage('Build image') {
             agent {
                 kubernetes {
@@ -49,4 +49,4 @@ pipeline {
         }
     }
 }
-}
+
