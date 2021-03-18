@@ -1,0 +1,14 @@
+apiVersion: builtin
+kind: ReplicaCountTransformer
+metadata:
+  name: pirates-patch-replica
+replica:
+  name: pirates
+  count: 5
+fieldSpecs:
+- path: spec/replicas
+  create: true
+  kind: Deployment
+- path: spec/replicas
+  create: true
+  kind: ReplicationController

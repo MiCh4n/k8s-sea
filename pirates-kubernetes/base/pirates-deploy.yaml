@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pirates
+spec:
+  selector:
+    matchLabels:
+      app: pirates
+  template:
+    metadata:
+      labels:
+        app: pirates
+      annotations:
+        'consul.hashicorp.com/connect-inject': 'true'
+    spec:
+      containers:
+      - name: pirates
+        image: mich4n/pirates
+        env:
+          - name: LISTEN_ADDRESS
+            value: ":6000"
+        resources:
+          limits:
+            memory: "256Mi"
+            cpu: "350m"
+        ports:
+        - containerPort: 6000
+          name: http

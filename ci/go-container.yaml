@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: go
+spec:
+  containers:
+  - name: kubectl-go
+    image: golang:1.16.2-buster
+    imagePullPolicy: Always
+    tty: true
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
