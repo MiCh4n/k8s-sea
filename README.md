@@ -1,9 +1,9 @@
-# app to show k8s
-app | port
-----|-------
-sea | 5000
-pirates | 6000
-
+# Sea of kubernetes
+## Two applications deployed on kubernetes cluster
+* ### Pirates expose API on port 6000
+* ### Sea fetch data from pirates endpoint using *Consul* to establish connection between them, and also expose HTTP server on port 5000
+Corresponding applications have their own branches to easier maintain them and deploy by **Jenkins**.  
+Jenkins test, create image using kaniko container and push to docker registry after that deploy to cluster.
 ```
 # Create secret for docker creds to push image to registry
 kubectl create secret generic jenkins-docker-creds \
